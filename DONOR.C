@@ -1,0 +1,114 @@
+#include<stdio.h>
+#include<conio.h>
+int count=0;
+int b;
+struct bloodbank
+{
+	char name[50];
+	int age;
+	char address[100];
+	char email_id[100];
+	int mobileno;
+	char bloodgroup[3];
+	char gender;
+}donor[50];
+void adddata(){
+	char ch;
+	int i;
+	while(ch=='y'||ch=='Y')
+	{
+	clrscr();
+	printf("\n\t enter the donor's data");
+	printf("\n\t enter name: ");
+	scanf("%s",donor[i].name);
+	printf("\n\t enter age");
+	scanf("%d",&donor[i].age);
+	printf("\n\t enter address");
+	scanf("%s",donor[i].address);
+	printf("\n\t enter email_id");
+	scanf("%s",donor[i].email_id );
+	printf("\n\t enter mobileno");
+	scanf("%d",&donor[i].mobileno);
+	printf("\n\t enter bloodgroup");
+	scanf("%s",donor[i].bloodgroup);
+	printf("\n\t enter gender");
+	scanf("%s",&donor[i].gender);
+	printf("\n\n\n want to enter more?(y/n)");
+	scanf("%c",&ch);
+	i++;
+	count++;
+	}
+	void displaydata()
+	{
+	char ch;
+	int i=0;
+	printf("want to display all data");
+	scanf("%c"&ch);
+	if(ch=='y'||ch=='Y')
+	{
+	while(count!=0)
+	{
+	printf("\n\t enter the donor's data");
+	printf("\n\t enter name: ");
+	scanf("%s",donor[i].name);
+	printf("\n\t enter age");
+	scanf("%d",&donor[i].age);
+	printf("\n\t enter address");
+	scanf("%s",donor[i].address);
+	printf("\n\t enter email_id");
+	scanf("%s",donor[i].email_id );
+	printf("\n\t enter mobileno");
+	scanf("%d",&donor[i].mobileno);
+	printf("\n\t enter bloodgroup");
+	scanf("%s",donor[i].bloodgroup);
+	printf("\n\t enter gender");
+	scanf("%s",&donor[i].gender);
+	i++;
+	count--;
+	}
+	else if(ch=='n'||ch=='N')
+	{
+	while(count!=0)
+	{
+	printf("\n\t %s",donor[i].name);
+	i++;
+	count--;
+	}
+	}
+	else
+	{
+	printf("\n\t INVALID INPUT");
+	break;
+	}
+	}
+	void filterdata()
+	{
+	float perdet;
+	clrscr();
+	printf("\n\n\t enter the details to be filtered");
+	scanf("%f",&perdet);
+	} }
+int main()
+{
+	clrscr();
+	int client_opt;
+	printf("\n\n\n\n\t\t\t BLOOD BANK APPLICATION");
+	printf("\n\n\t 1. Add donor's data");
+	printf("\n\n\t 2. Display donor's data");
+	printf("\n\n\t 3. Filter data ");
+	printf("\n\n\n\n\n enter the operation to be performed");
+	scanf("%d",&client_opt);
+	switch(client_opt)
+	{
+		case 1: adddata();
+			 break;
+		case 2: displaydata();
+			break;
+		case 3: filterdata();
+			break;
+		default: ("\n\t INVALID INPUT");
+	}
+	getch();
+	return 0;
+}
+}
